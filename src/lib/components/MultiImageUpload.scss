@@ -1,0 +1,23 @@
+$preview-image-size: 250px;
+
+.image-upload {
+  opacity: 0;
+}
+
+.preview-card {
+  display: inline-block;
+  width: $preview-image-size;
+  height: $preview-image-size;
+
+  .preview-card-cancel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+
+  .preview-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
