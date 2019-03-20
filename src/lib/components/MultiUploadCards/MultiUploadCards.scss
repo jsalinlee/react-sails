@@ -1,6 +1,10 @@
 $preview-image-size: 250px;
 
-.image-upload {
+.multi-upload-cards {
+  display: inline-block;
+}
+
+.file-upload {
   opacity: 0;
 }
 
@@ -8,6 +12,10 @@ $preview-image-size: 250px;
   display: inline-block;
   width: $preview-image-size;
   height: $preview-image-size;
+  border: 2px groove grey;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 5px 0 0;
 
   .preview-card-cancel {
     position: absolute;

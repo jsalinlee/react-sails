@@ -1,5 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import MultiImageUpload from "../lib/components/MultiImageUpload";
+import MultiUploadCards from "../lib/components/MultiUploadCards/MultiUploadCards";
 
-storiesOf("MultiImageUpload", module).add("upload multiple images", () => <MultiImageUpload />);
+storiesOf("MultiUploadCards", module).add("upload multiple files", () => <MultiUploadCards />);

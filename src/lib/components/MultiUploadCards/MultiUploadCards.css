@@ -1,10 +1,17 @@
-.image-upload {
+.multi-upload-cards {
+  display: inline-block; }
+
+.file-upload {
   opacity: 0; }
 
 .preview-card {
   display: inline-block;
   width: 250px;
-  height: 250px; }
+  height: 250px;
+  border: 2px groove grey;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 5px 0 0; }
   .preview-card .preview-card-cancel {
     position: absolute;
     width: 50px;
