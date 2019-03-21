@@ -8,6 +8,6 @@ export default (props) => (
         <img src={addIcon} alt="" />
       </label>
     </div>
-    <input className="file-upload" type="file" id="multi" onChange={props.onChange} multiple />
+    <input className="file-upload" type="file" id="multi" onChange={props.appendFile} multiple />
   </div>
 );
