@@ -6,14 +6,10 @@ import Buttons from "./Buttons";
 import "./MultiUploadCards.css";
 
 export default class MultiUploadCards extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      files: []
-    };
+  state = {
+    files: []
   }
-
-  onChange = (event) => {
+  onAppend = (event) => {
     const files = Array.from(event.target.files);
     files.forEach((file) => {
       file.id = uuidv4();
@@ -36,10 +32,8 @@ export default class MultiUploadCards extends PureComponent {
       return;
     }
 
-    let files = this.state.files.filter((file) => file !== this.draggedCard);
-
+    const files = this.state.files.filter((file) => file !== this.draggedCard);
     files.splice(index, 0, this.draggedCard);
-
     this.setState({ files: files });
   };
 
@@ -55,12 +49,8 @@ export default class MultiUploadCards extends PureComponent {
 
   render() {
     const { files } = this.state;
-    const content = () => {
-      switch (true) {
-        case files.length > 0:
-          return (
-            <div>
-              <Buttons onChange={this.onChange} />
+    return (<div>
+              <Buttons appendFile={this.onAppend} />
               <Cards
                 files={files}
                 removeFile={this.removeFile}
@@ -70,11 +60,5 @@ export default class MultiUploadCards extends PureComponent {
               />
             </div>
           );
-        default:
-          return <Buttons onChange={this.onChange} />;
-      }
-    };
-
-    return <div>{content()}</div>;
   }
 }
