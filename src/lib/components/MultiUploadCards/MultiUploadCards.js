@@ -7,8 +7,12 @@ import "./MultiUploadCards.css";
 
 export default class MultiUploadCards extends PureComponent {
   state = {
-    files: []
+    files: [],
+    // TODO: muc_value should represent what modification has been done, such as
+    // insertion, deletion, and reorder.
+    muc_value: ''
   }
+
   onAppend = (event) => {
     const files = Array.from(event.target.files);
     files.forEach((file) => {
@@ -50,6 +54,7 @@ export default class MultiUploadCards extends PureComponent {
   render() {
     const { files } = this.state;
     return (<div>
+      <input name="muc_value" type="hidden" value={this.state.muc_value}/>
               <Buttons appendFile={this.onAppend} />
               <Cards
                 files={files}
